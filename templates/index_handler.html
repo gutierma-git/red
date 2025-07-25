@@ -1,0 +1,155 @@
+
+{% extends './layout.html' %}
+
+{% block title %} 
+
+{% endblock %}
+
+{% block body %} 
+<br>
+
+<div class="wrapper">
+
+   <div class="two">
+    <br>
+    <b>OTRAS ESPECIALIDADES A CONSIDERAR</b>
+    <br> 
+    <br>
+    <br>
+
+    {% for i in range (0, data['longitud'])  %}
+        {{ data['predicciones'].iloc[i,1] }}% - 
+        {{ data['predicciones'].iloc[i,0] }}
+        <br>
+            {% endfor %} 
+   </div>
+     
+   <div class="one">
+       <br> 
+       <div>
+            {{ data['descripcion'] }}
+            <br>
+            <br>
+        </div>
+        <div>
+            - EDAD: 
+            {{ form.edad.data }}
+            <br>
+        </div>
+        <div> 
+            {% if form.desempleado.data == True %}
+               - DESEMPLEADA
+            {% else %}
+               - OCUPADA
+            {% endif %}
+            <br>
+        </div>
+        <div>
+            {% if form.hombre.data == True %}
+               - HOMBRE
+            {% else %}
+               - MUJER
+            {% endif %}
+            <br>
+        </div>
+        <div>
+            {% if form.especialidadrequerida.data == True %}
+               - TIENE LA ESPECIALIDAD REQUERIDA EN SU DEMANDA
+            {% else %}
+               - NO TIENE LA ESPECIALIDAD REQUERIDA EN SU DEMANDA
+            {% endif %}
+            <br>
+        </div>
+        <div>
+            {% if form.discapacidad.data == True %}
+               - ES UNA PERSONA CON DISCAPACIDAD
+            {% else %}
+               - NO ES UNA PERSONA CON DISCAPACIDAD
+            {% endif %}
+            <br>
+        </div>
+        <div>
+            {% if form.pld.data == True %}
+               - PARADO DE LARGA DURACION
+            {% else %}
+               - NO ES PLD
+            {% endif %}
+            <br>
+        </div>
+        <div>
+            {% if form.titulacion.data == True %}
+               - DISPONE DE TITULACION
+            {% else %}
+               - NO DISPONE DE TITULACIÓN
+            {% endif %}
+            <br>
+        </div>
+        <div>
+            {% if form.orientacion.data == True %}
+               - RECIBE SERVICIOS DE ORIENTACION
+            {% else %}
+               - NO RECIBE SERVICIOS DE ORIENTACION
+            {% endif %}
+            <br>
+        </div>
+        <div>
+            {% if form.bajacualificacion.data == True %}
+               - TIENE BAJA CUALIFICACION
+            {% else %}
+               - NO TIENE BAJA CUALIFICACION
+            {% endif %}
+            <br>
+        </div>
+        <div>
+            {% if form.rsb.data == True %}
+               - PERCIBE RENTA SOCIAL BÁSICA
+            {% else %}
+               - NO PERCIBE RENTA SOCIAL BÁSICA
+            {% endif %}
+            <br>
+        </div>
+        <div>
+            {% if form.cobraprestacion.data == True %}
+               - PERCIBE PRESTACIÓN POR DESEMPLEO
+            {% else %}
+               - NO PERCIBE PRESTACION POR DESEMPLEO
+            {% endif %}
+            <br>
+        </div>
+        <div>
+            {% if form.hacursadoaf.data == True %}
+               - HA CURSADO ALGUNA AF
+            {% else %}
+               - NO HA CURSADO AF CON ANTERIORIDAD
+            {% endif %}
+            <br>
+        </div>
+        <div>
+            {% if form.hasuperadoaf.data == True %}
+               - HA SUPERADO ALGUNA AF
+            {% else %}
+               - NO HA SUPERADO AF CON ANTERIORIDAD
+            {% endif %}
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <b>LA PROBABILIDAD DE CUALIFICAR ES:</b> 
+            {{ data['prediccion'] }}%
+            <br>
+            <br>
+            * Basado en los resultados de otras personas con ese perfil
+            <br>
+            <br>       
+        </div>
+        <button onclick="redirigir('/')">Nueva búsqueda</button>
+        <script>
+            function redirigir(url) {
+               window.location.href = url;
+            }
+        </script>
+    </div>
+</div>
+
+{% endblock %}

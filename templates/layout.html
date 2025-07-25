@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}SISTEMA DE ORIENTACIÓN{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/layout.css')}}">
+</head>
+<body>
+
+<br>
+<br>
+
+  <img src="../static/images/GobiernoCantabriaMD.png" width="10%" height=10%"" />
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <img src="../static/images/emcan01.png" width="20%" height=20%"" />
+<br>
+<br>
+ 
+  {% block body %}{% endblock %}
+  <script src="{{url_for('static',filename='js/layout.js')}}"></script>
+</body>
+</html>
+

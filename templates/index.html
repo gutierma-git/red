@@ -1,0 +1,100 @@
+
+{% extends './layout.html' %}
+
+{% block title %} 
+
+{% endblock %}
+
+{% block body %} 
+
+<div class="shadowbox">
+<br>
+<b>ESPECIALIDAD FORMATIVA DE INTERES Y PERFIL DEL CANDIDATO</b>
+<br>
+<br>
+    <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+        <div>
+            {{ form.especialidad.label }}
+            {{ form.especialidad }}
+            <br>
+            <br>
+        </div>
+        <div>
+            {{ form.edad.label }}
+            {{ form.edad }}
+            <br>
+            {% for error in form.edad.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div>
+            {{ form.desempleado.label }}
+            {{ form.desempleado }}
+            <br>
+        </div>
+        <div>
+            {{ form.hombre.label }}
+            {{ form.hombre }}
+            <br>
+        </div>
+
+        <div>
+            {{ form.especialidadrequerida.label }}
+            {{ form.especialidadrequerida }}
+            <br>
+        </div>
+        <div>
+            {{ form.discapacidad.label }}
+            {{ form.discapacidad }}
+            <br>
+        </div>
+        <div>
+            {{ form.pld.label }}
+            {{ form.pld }}
+            <br>
+        </div>
+<div>
+            {{ form.titulacion.label }}
+            {{ form.titulacion }}
+            <br>
+        </div>
+        <div>
+            {{ form.orientacion.label }}
+            {{ form.orientacion }}
+            <br>
+        </div>
+        <div>
+            {{ form.bajacualificacion.label }}
+            {{ form.bajacualificacion }}
+            <br>
+        </div>
+        <div>
+            {{ form.rsb.label }}
+            {{ form.rsb }}
+            <br>
+        </div>
+        <div>
+            {{ form.cobraprestacion.label }}
+            {{ form.cobraprestacion }}
+            <br>
+        </div>
+        <div>
+            {{ form.hacursadoaf.label }}
+            {{ form.hacursadoaf }}
+            <br>
+        </div>
+        <div>
+            {{ form.hasuperadoaf.label }}
+            {{ form.hasuperadoaf }}
+            <br>
+        </div>
+        <br>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+</div>
+
+{% endblock %}
